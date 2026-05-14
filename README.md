@@ -112,7 +112,7 @@ The project focuses on balancing:
 
 - Anomaly detetction in solar wind data
 - Real-time DSCOVR satellite position visualization
-- Historical geomagnetic activity views
+- Historical geomagnetic activity views (event visualization)
 - Expanded aurora forecast tools
 - Improved accessibility, e.g., informational overlays and keyboard navigation
 
