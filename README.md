@@ -1,10 +1,18 @@
 # Romvær
 
-A responsive space weather dashboard for visualizing real-time solar wind conditions and geomagnetic activity.
-
-Built with React, TypeScript, Vite, and Highcharts using live NOAA SWPC data.
+A responsive space weather dashboard for visualizing real-time solar wind conditions, geomagnetic activity, and aurora visibility using live NOAA SWPC data.
+This dashboard is designed for enthusiasts interested in space weather and aurora observation.
+Built with React, TypeScript, Vite, and Highcharts.
 
 ---
+
+## 💡 Motivation
+
+I built Romvær to explore modern frontend development and scientific data visualization using React and Highcharts.
+
+The project combines my interests in space weather, data visualization, interactive monitoring systems, and responsive UI design while working with real-time NOAA data streams.
+
+--- 
 
 ## ✨ Features
 
@@ -13,6 +21,7 @@ Built with React, TypeScript, Vite, and Highcharts using live NOAA SWPC data.
 - Aurora visibility guidance
 - Responsive desktop/mobile layout
 - Interactive Highcharts with tooltips and overlays
+- Client-side time range filtering
 - Custom geomagnetic storm classification system
 - NOAA SWPC data integration
 
@@ -20,22 +29,24 @@ Built with React, TypeScript, Vite, and Highcharts using live NOAA SWPC data.
 
 ## 📸 Preview
 
-### Solar Wind Dashboard
+### Solar Wind Monitoring Dashboard
 
-![Solar Wind Dashboard](./screenshots/solar-wind.png)
+![Solar wind monitoring dashboard](./screenshots/solar-wind.png)
 
-### Planetary K-index
+### Planetary K-index Forecast
 
-![Solar Wind Dashboard](./screenshots/geomagnatic-activity-and-forecast.png)
+![Planetary K-index forecast visualization](./screenshots/geomagnetic-activity-and-forecast.png)
 
 ### Modular & Mobile View
 
-![Solar Wind Dashboard](./screenshots/modular-and-mobile-view.png)
+![Responsive mobile dashboard and extended view layout](./screenshots/modular-and-mobile-view.png)
 
 ---
 ## 🚀 Live Demo
 
 View project: https://romvaer.vercel.app/
+- Live deployment with automatic updates via Vercel
+- Real-time NOAA SWPC data integration
 ---
 
 ## 🛰 Data Sources
@@ -54,6 +65,15 @@ Link: https://services.swpc.noaa.gov/products/
 - Highcharts
 - CSS3, HTML
 - NOAA SWPC API
+
+---
+
+## 📂 Project Structure
+
+- `components/` – reusable chart and UI components
+- `config/` – dashboard and chart configuration
+- `utils/` – geomagnetic storm utilities and helpers
+- `assets/` – static visual assets
 
 ---
 
@@ -88,7 +108,7 @@ npm run build
 ## 📱 Responsiveness
 
 The dashboard is designed for both desktop and mobile layouts using CSS Grid, Flexbox, and responsive breakpoints.
-If possible, I recommend using the desktop version.
+The desktop layout provides the most complete monitoring experience, while the mobile layout focuses on compact navigation and readability.
 
 
 ---
@@ -110,7 +130,7 @@ The project focuses on balancing:
 
 ## 🔭 Future Improvements
 
-- Anomaly detetction in solar wind data
+- Anomaly detection in solar wind data
 - Real-time DSCOVR satellite position visualization
 - Historical geomagnetic activity views (event visualization)
 - Expanded aurora forecast tools
@@ -120,23 +140,5 @@ The project focuses on balancing:
 
 ## 📄 License
 
-
+This project is licensed under the MIT License.
 Copyright (c) 2026 Beatrice Budich
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
