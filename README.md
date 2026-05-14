@@ -8,7 +8,7 @@ Built with React, TypeScript, Vite, and Highcharts using live NOAA SWPC data.
 
 ## ✨ Features
 
-- Real-time solar wind visualization
+- Real-time solar wind data visualization
 - Planetary K-index forecast and storm levels
 - Aurora visibility guidance
 - Responsive desktop/mobile layout
@@ -52,7 +52,7 @@ Link: https://services.swpc.noaa.gov/products/
 - TypeScript
 - Vite
 - Highcharts
-- HTML, CSS3
+- CSS3, HTML
 - NOAA SWPC API
 
 ---
@@ -88,6 +88,8 @@ npm run build
 ## 📱 Responsiveness
 
 The dashboard is designed for both desktop and mobile layouts using CSS Grid, Flexbox, and responsive breakpoints.
+If possible, I recommend using the desktop version.
+
 
 ---
 
@@ -95,7 +97,7 @@ The dashboard is designed for both desktop and mobile layouts using CSS Grid, Fl
 
 The UI was inspired by:
 - modern monitoring dashboards
-- aurora color palettes
+- atmospheric aurora color palettes
 - scientific visualization interfaces
 
 The project focuses on balancing:
@@ -113,7 +115,7 @@ The project focuses on balancing:
 - Historical geomagnetic activity views
 - Expanded aurora forecast tools
 - Additional solar activity indicators
-- Improved accessibility and keyboard navigation
+- Improved accessibility, e.g., informational overlays and keyboard navigation
 
 ---
 
