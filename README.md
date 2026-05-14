@@ -12,7 +12,7 @@ Built with React, TypeScript, Vite, and Highcharts using live NOAA SWPC data.
 - Planetary K-index forecast and storm levels
 - Aurora visibility guidance
 - Responsive desktop/mobile layout
-- Interactive Highcharts tooltips and overlays
+- Interactive Highcharts with tooltips and overlays
 - Custom geomagnetic storm classification system
 - NOAA SWPC data integration
 
@@ -114,7 +114,6 @@ The project focuses on balancing:
 - Real-time DSCOVR satellite position visualization
 - Historical geomagnetic activity views
 - Expanded aurora forecast tools
-- Additional solar activity indicators
 - Improved accessibility, e.g., informational overlays and keyboard navigation
 
 ---
