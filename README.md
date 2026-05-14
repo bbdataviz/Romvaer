@@ -23,11 +23,14 @@ Built with React, TypeScript, Vite, and Highcharts using live NOAA SWPC data.
 ### Solar Wind Dashboard
 
 ![Solar Wind Dashboard](./screenshots/solar-wind.png)
-![Solar Wind Dashboard](./screenshots/mobile-view.png)
 
 ### Planetary K-index
 
-![Solar Wind Dashboard](./screenshots/kp-index-and-forecast.png)
+![Solar Wind Dashboard](./screenshots/geomagnatic-activity-and-forecast.png)
+
+### Modular & Mobile View
+
+![Solar Wind Dashboard](./screenshots/modular-and-mobile-view.png)
 
 ---
 ## 🚀 Live Demo
