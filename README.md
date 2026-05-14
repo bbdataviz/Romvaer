@@ -1,4 +1,4 @@
-# 🌌 Romvær
+# Romvær
 
 A responsive space weather dashboard for visualizing real-time solar wind conditions and geomagnetic activity.
 
