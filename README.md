@@ -63,7 +63,7 @@ Link: https://services.swpc.noaa.gov/products/
 - TypeScript
 - Vite
 - Highcharts
-- CSS3, HTML
+- CSS3, HTML5
 - NOAA SWPC API
 
 ---
