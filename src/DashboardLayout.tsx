@@ -51,7 +51,7 @@ export default function DashboardLayout({children, expand, setExpand, range, pag
 
         <button className={page === "kIndex" ? "active" : ""}
           onClick={() => setPage("kIndex")}>
-            Kp Index
+            Kp-Index
         </button>
 
         <a className="nav-link"

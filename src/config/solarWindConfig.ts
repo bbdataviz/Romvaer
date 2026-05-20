@@ -1,7 +1,7 @@
 export const variableConfig = {
   density: {
     column: 1,
-    title: "Plasma density",
+    title: "Plasma Density",
     unit: "cm&#x207B;&sup3;" // cm^-3
   },
   speed: {
@@ -11,7 +11,7 @@ export const variableConfig = {
   },
   temperature: {
     column: 3,
-    title: "Plasma temperature",
+    title: "Plasma Temperature",
     unit: "&#176;C" // "K"
   }
 } as const; // immutable config

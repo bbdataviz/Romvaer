@@ -84,6 +84,7 @@ export default function KpIndex() {
 
   }, []);
 
+
   const estimatedStart = data.find(
     point =>
       (point.custom as KpCustomData)?.statusType === "estimated"
@@ -102,7 +103,8 @@ export default function KpIndex() {
     chart: {
       backgroundColor: "#0000",
       borderRadius: 10,
-      spacing: [25, 25, 30, 15]
+      spacing: [25, 25, 30, 15],
+      animation: false
     },
     title: {
       text: "Planetary K-Index and Forecast",
@@ -206,7 +208,7 @@ export default function KpIndex() {
       labels: { style: { color: "#ccc" } },
       gridLineColor: "#444",
       title: {
-        text: "Kp Index",
+        text: "Kp-Index",
         style: { color: "#ccc" } 
       },
       min: 0,
