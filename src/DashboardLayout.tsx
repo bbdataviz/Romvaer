@@ -3,17 +3,20 @@ import SolarWind from './components/SolarWind.tsx';
 import { type DashboardPage} from './config/dashboardConfig';
 import { type SolarWindVariable } from './config/solarWindConfig.ts';
 import { type TimeRange } from './config/timeRangeConfig.ts';
+import satellitePosition from './assets/DSCOVR-satellite-position.svg';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
+  range: TimeRange;
   page: DashboardPage;
   setPage: React.Dispatch<React.SetStateAction<DashboardPage>>;
   expand: SolarWindVariable | null;
   setExpand: React.Dispatch<React.SetStateAction<SolarWindVariable | null>>; 
-  range: TimeRange;
+  expandSat: boolean;
+  setExpandSat: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function DashboardLayout({children, expand, setExpand, range, page, setPage} : DashboardLayoutProps) {
+export default function DashboardLayout({children, range, page, setPage, expand, setExpand, expandSat, setExpandSat} : DashboardLayoutProps) {
   return (
     <div className="dashboard">
       <aside className="sidebar">
@@ -74,6 +77,22 @@ export default function DashboardLayout({children, expand, setExpand, range, pag
                 onClick={() => setExpand(null)}>⛶
               </button>
               <SolarWind variable={expand} range={range} />
+            </div>
+          </div>
+        )}
+        {expandSat && (
+          <div className="modal-overlay"
+            onClick={() => setExpandSat(false)}>
+            <div className="modal-content"
+              onClick={(e) => e.stopPropagation()}>
+              <div className="chart-element">
+                <button className="modal-btn"
+                  onClick={() => setExpandSat(false)}>⛶
+                </button>
+                <div className="image-container  modal-image-container">
+                  <img src={satellitePosition} />
+                </div>
+              </div>
             </div>
           </div>
         )}

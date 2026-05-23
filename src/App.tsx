@@ -21,19 +21,20 @@ export default function App() {
   };
 
   const [expand, setExpand] = useState<SolarWindVariable | null>(null);
+  const [expandSat, setExpandSat] = useState<boolean>(false);
   
   return (
     <>
       <Header />
-      <DashboardLayout expand={expand} setExpand={setExpand} range={range} page={page} setPage={setPage}>
+      <DashboardLayout range={range} page={page} setPage={setPage} expand={expand} setExpand={setExpand} expandSat={expandSat} setExpandSat={setExpandSat}>
         {page === "solarWind" && (
           <>
             <div className="toolbar">
               <p>Last</p>
               <button onClick={() => handleRange("60m")}>60m</button>
-              <p>|</p>
+            
               <button onClick={() => handleRange("24h")}>24h</button>
-              <p>|</p>
+              
               <button onClick={() => handleRange("7d")}>7d</button>
             </div>
             
@@ -62,6 +63,9 @@ export default function App() {
               <div className="chart-card">
                 <div className="chart-element">
                     <div className="alternative-content">
+                      <button className="modal-btn"
+                        onClick={() => setExpandSat(true)}>⛶
+                      </button>
                       <h2>DSCOVR – Satellite Position</h2>
                       <div className="image-container">
                         <img src={satellitePosition} />
@@ -77,25 +81,21 @@ export default function App() {
           <>
             <div className="toolbar"></div>
             <div className="chart-grid kp-grid">
-
+            
               <div className="chart-card">
-                <div className="chart-element">
                   <KpIndex />
                   <Legend />
-                </div>
               </div>
 
-              <div className="chart-card">
-                <div className="alternative-content">
-                  <h2>Kp-Index</h2>
-                  <div className="kp-info">
-                    <p> The planetary K-index measures global geomagnetic activity on a scale from 0 to 9, indicating disturbances in Earth's magnetic field caused by variations in the solar wind. </p>
-                    <p><b> Impacts:</b> Elevated Kp levels (&gt; 6) can affect technological systems, including GPS/GNSS positioning, radio communication, power infrastructure, and spacecraft or drone operations. </p>
-                    <p><b>Aurora Visibility:</b> Kp 3–4 provides favorable conditions for aurora viewing in northern regions, while Kp 5 and above can allow auroral activity to become visible at much lower latitudes. </p>
-                  </div> 
-                </div>
+              <div className="alternative-content">
+                <h2>Kp-Index</h2>
+                <div className="kp-info">
+                  <p> The planetary K-index measures global geomagnetic activity on a scale from 0 to 9, indicating disturbances in Earth's magnetic field caused by variations in the solar wind. </p>
+                  <p><b> Impacts:</b> Elevated Kp levels (&gt; 6) can affect technological systems, including GPS/GNSS positioning, radio communication, power infrastructure, and spacecraft or drone operations. </p>
+                  <p><b>Aurora Visibility:</b> Kp 3–4 provides favorable conditions for aurora viewing in northern regions, while Kp 5 and above can allow auroral activity to become visible at much lower latitudes. </p>
+                </div> 
               </div>
-        
+              
             </div>
           </>
         )}

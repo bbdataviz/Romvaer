@@ -7,10 +7,10 @@
   --bg-sidebar: hsl(231, 20%, 12%);
   --button-sidebar: #2f303a80;
   --border-sidebar-btn: #b268fc97;
-  --button-toolbar: #b268fc46;
+  --button-toolbar: #b268fc53;
   --border: #5f6168; /* charts */
   --border-layout: #444;
-  --hover: #b268fceb;
+  --hover: #b268fcc2;
   --gradient: linear-gradient(0deg, #65ED53 0%, #2A7B9B 100%);
   --accent: #c084fc;
   --accent-bg: rgba(192, 132, 252, 0.15);
@@ -31,10 +31,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 #root {
@@ -58,19 +54,12 @@ h1 {
   font-size: 1.3rem;
   font-weight: 150;
   letter-spacing: 1.68px;
-  @media (max-width: 1024px) {
-    margin: 20px 0;
-  }
 }
 
 h2 {
   font-size: 18px;
   font-weight: 300;
-  
   letter-spacing: -0.24px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
 }
 
 p {
@@ -78,7 +67,10 @@ p {
   font-weight: 200;
   margin-left: 10px;
   color: var(--text-p);
-
 }
 
-
+ @media (max-width: 900px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+}

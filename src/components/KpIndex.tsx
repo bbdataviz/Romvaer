@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import Highcharts from "highcharts";
 import { Chart } from '@highcharts/react';
 import { Accessibility } from '@highcharts/react/options/Accessibility';
 import { ColumnSeries } from '@highcharts/react/series/Column';
@@ -24,6 +25,8 @@ export default function KpIndex() {
     stormLevel?: string; 
     description?: string;
   }>({});
+
+  const chartRef = useRef<any>(null);
 
   useEffect(() => {
 
@@ -84,6 +87,26 @@ export default function KpIndex() {
 
   }, []);
 
+  // chart resizing
+  useEffect(() => {
+
+    const handleResize = () => {
+      const chart = chartRef.current?.chart;
+      
+      if (chart) {
+        chart.reflow();
+        chart.redraw(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+
+  }, []);
+
 
   const estimatedStart = data.find(
     point =>
@@ -101,10 +124,12 @@ export default function KpIndex() {
 
   const optionsChart: Highcharts.Options = {
     chart: {
+      width: null,
+      height: null,
       backgroundColor: "#0000",
+      animation: false,
       borderRadius: 10,
       spacing: [25, 25, 30, 15],
-      animation: false
     },
     title: {
       text: "Planetary K-Index and Forecast",
@@ -276,12 +301,23 @@ export default function KpIndex() {
     borderWidth: 0
   };
 
+  const containerProps = {
+    className: "chart-element",
+    ref: chartRef,
+    //style: { width: "100%", height: "100%" }
+  };
+
   return(
-    <>
-      <Chart options={optionsChart}>
-        <Accessibility />
-        <ColumnSeries data={data} options={optionsColumn}/> 
-      </Chart>
-    </>
+    <Chart 
+      options={optionsChart} 
+      containerProps={containerProps}
+    >
+      <Accessibility />
+      <ColumnSeries 
+        data={data} 
+        options={optionsColumn}
+      /> 
+    </Chart>
+
   );  
 }

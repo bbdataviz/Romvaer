@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Highcharts from "highcharts";
 import { Chart, Title } from "@highcharts/react";
 import { Accessibility } from '@highcharts/react/options/Accessibility';
@@ -15,8 +15,11 @@ interface SolarWindProps {
 export default function SolarWind({ variable, range }: SolarWindProps) {
 
   const minutes = timeRangeConfig[range].minutes;
-  const [data, setData] = useState<[number, number][]>([]);  
+  const [data, setData] = useState<[number, number][]>([]); 
 
+  const chartRef = useRef<any>(null);
+
+  // data fetching
   useEffect(() => {
 
     const fetchData = async () => {
@@ -71,9 +74,30 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
     
   }, [variable, range, minutes]); // Dependencies
 
+  // chart resizing
+  useEffect(() => {
+
+    const handleResize = () => {
+      const chart = chartRef.current?.chart;
+      
+      if (chart) {
+        chart.reflow();
+        chart.redraw(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+
+  }, []);
 
   const optionsChart: Highcharts.Options = {
     chart: {
+      width: null,
+      height: null,
       backgroundColor: "#0000",
       animation: false,
       borderRadius: 10,
@@ -186,7 +210,8 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
 
   const containerProps = {
     className: "chart-element",
-    style: { width: "100%", height: "100%" }
+    ref: chartRef,
+    //style: { width: "100%", height: "100%" }
   };
 
   const optionsArea: Highcharts.PlotAreasplineOptions = {
@@ -203,10 +228,18 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
   };
 
   return (
-    <Chart options={optionsChart} containerProps={containerProps}>
-      <Title>{variableConfig[variable].title}</Title>
+    <Chart 
+      options={optionsChart} 
+      containerProps={containerProps}
+    >
+      <Title>
+        {variableConfig[variable].title}
+      </Title>
       <Accessibility />
-      <AreaSplineSeries data={data} options={optionsArea}/>
+      <AreaSplineSeries 
+        data={data} 
+        options={optionsArea}
+      />
     </Chart>
   );
 }
