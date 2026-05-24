@@ -110,7 +110,6 @@ npm run build
 The dashboard is designed for both desktop and mobile layouts using CSS Grid, Flexbox, and responsive breakpoints.
 The desktop layout provides the most complete monitoring experience, while the mobile layout focuses on compact navigation and readability.
 
-
 ---
 
 ## 🎨 Design Notes
@@ -127,6 +126,19 @@ The project focuses on balancing:
 - visual hierarchy
 
 ---
+
+## 🧠 What I Learned
+
+This project gave me practical experience with:
+
+- working with real-time NOAA SWPC API data
+- transforming scientific datasets for frontend visualization
+- structuring reusable React and TypeScript components
+- configuring interactive Highcharts visualizations
+- balancing scientific accuracy with readability and usability
+- iterative UI refinement for dense data interfaces
+
+--- 
 
 ## 🔭 Future Improvements
 
