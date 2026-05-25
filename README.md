@@ -16,13 +16,13 @@ The project combines my interests in space weather, data visualization, interact
 
 ## ✨ Features
 
-- Real-time solar wind data visualization
-- Planetary K-index forecast and storm levels
-- Aurora visibility guidance
-- Responsive desktop/mobile layout
-- Interactive Highcharts with tooltips and overlays
-- Client-side time range filtering
-- Custom geomagnetic storm classification system
+- real-time solar wind data visualization
+- planetary K-index forecast and storm levels
+- aurora visibility guidance
+- responsive desktop/mobile layout
+- interactive Highcharts with tooltips and overlays
+- client-side time range filtering
+- custom geomagnetic storm classification system
 - NOAA SWPC data integration
 
 ---
@@ -44,7 +44,7 @@ The project combines my interests in space weather, data visualization, interact
 ---
 ## 🚀 Live Demo
 
-View project: https://romvaer.vercel.app/
+View project: [romvaer.vercel.app](https://romvaer.vercel.app/)
 - Live deployment with automatic updates via Vercel
 - Real-time NOAA SWPC data integration
 ---
@@ -53,7 +53,7 @@ View project: https://romvaer.vercel.app/
 
 This project uses public data provided by NOAA Space Weather Prediction Center (SWPC).
 
-Link: https://services.swpc.noaa.gov/products/
+Link: [NOAA SWPC data](https://services.swpc.noaa.gov/products/)
 
 ---
 
@@ -142,11 +142,11 @@ This project gave me practical experience with:
 
 ## 🔭 Future Improvements
 
-- Anomaly detection in solar wind data
-- Real-time DSCOVR satellite position visualization
-- Historical geomagnetic activity views (event visualization)
-- Expanded aurora forecast tools
-- Improved accessibility, e.g., informational overlays and keyboard navigation
+- anomaly detection in solar wind data
+- real-time DSCOVR satellite position visualization
+- historical geomagnetic activity views (event visualization)
+- expanded aurora forecast tools
+- improved accessibility, e.g., informational overlays and keyboard navigation
 
 ---
 
