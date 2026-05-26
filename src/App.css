@@ -117,7 +117,7 @@
 @media (max-height: 850px) { 
 
   .solar-wind-grid {
-    grid-auto-rows: 340px;
+    grid-auto-rows: 330px;
   }
 
   .chart-card {
