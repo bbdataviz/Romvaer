@@ -37,9 +37,7 @@
   grid-template-columns: 1fr;
 }
 
-
 /* Chart card */
-
 .chart-card, .chart-element {
   display: flex;
   flex-direction: column;
