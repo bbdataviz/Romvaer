@@ -237,7 +237,8 @@ export default function KpIndex() {
         style: { color: "#ccc" } 
       },
       min: 0,
-      max: 9
+      max: 9,
+      tickAmount: 10
     },
     legend: {
       enabled: false
