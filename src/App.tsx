@@ -4,12 +4,12 @@ import Header from './Header.tsx';
 import DashboardLayout from './DashboardLayout.tsx';
 import SolarWind from './components/SolarWind.tsx';
 import KpIndex from './components/KpIndex.tsx';
+import Legend from './components/Legend.tsx';
+import { type DashboardPage } from './config/dashboardConfig.ts';
 import { type SolarWindVariable } from './config/solarWindConfig.ts';
 import { type TimeRange } from './config/timeRangeConfig.ts';
-import { Legend } from './components/Legend.tsx';
 import satellitePosition from './assets/DSCOVR-satellite-position.svg';
 
-import { type DashboardPage } from './config/dashboardConfig.ts';
 
 export default function App() {
   
@@ -32,9 +32,7 @@ export default function App() {
             <div className="toolbar">
               <p>Last</p>
               <button onClick={() => handleRange("60m")}>60m</button>
-            
               <button onClick={() => handleRange("24h")}>24h</button>
-              
               <button onClick={() => handleRange("7d")}>7d</button>
             </div>
             
@@ -66,7 +64,7 @@ export default function App() {
                       <button className="modal-btn"
                         onClick={() => setExpandSat(true)}>⛶
                       </button>
-                      <h2>DSCOVR – Satellite Position</h2>
+                      <h2>SOLAR-1 – Satellite Position</h2>
                       <div className="image-container">
                         <img src={satellitePosition} />
                       </div>
@@ -83,8 +81,8 @@ export default function App() {
             <div className="chart-grid kp-grid">
             
               <div className="chart-card">
-                  <KpIndex />
-                  <Legend />
+                <KpIndex />
+                <Legend />
               </div>
 
               <div className="alternative-content">
