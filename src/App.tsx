@@ -64,7 +64,7 @@ export default function App() {
                       <button className="modal-btn"
                         onClick={() => setExpandSat(true)}>⛶
                       </button>
-                      <h2>SOLAR-1 – Satellite Position</h2>
+                      <h2>SOLAR1 – Satellite Position</h2>
                       <div className="image-container">
                         <img src={satellitePosition} />
                       </div>
