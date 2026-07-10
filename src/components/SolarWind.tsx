@@ -25,36 +25,33 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://services.swpc.noaa.gov/products/solar-wind/plasma-7-day.json" // longest time interval
+          "https://services.swpc.noaa.gov/products/geospace/propagated-solar-wind.json"
           );
        
         const json = await response.json();
+      
         const rows = json.slice(1);
         
-        function convertNOAAtimestamps(timestamp : string) {
-          return new Date(timestamp.replace(" ", "T") + "Z").getTime();
-        }
-
-        const latestTimestamp = convertNOAAtimestamps(rows[rows.length - 1][0]);
+        const latestTimestamp = Date.parse(rows[rows.length - 1][0]);
         const cutoff = latestTimestamp - minutes * 60 * 1000; // select a time range, convert min to ms
           
         const filteredRows = range === "7d" 
           ? rows 
           : rows.filter((row: any[]) => {
-            const currentTimestamp = convertNOAAtimestamps(row[0]);
+            const currentTimestamp = Date.parse(row[0]);
             
             return currentTimestamp >= cutoff;
           }); 
         
         const formatted = filteredRows.map((row: any[]) => {
-          const value = parseFloat(row[variableConfig[variable].column]);
+          const value = row[variableConfig[variable].column];
 
           const convert = variable === "temperature"
             ? value - 273.15 // Kelvin to Celsius
             : value;
 
           return [
-            convertNOAAtimestamps(row[0]),
+            Date.parse(row[0]),
             convert
           ]
         }
@@ -72,7 +69,7 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
 
     return () => clearInterval(interval);
     
-  }, [variable, range, minutes]); // Dependencies
+  }, [variable, range, minutes]); // dependencies
 
   // chart resizing
   useEffect(() => {
@@ -210,8 +207,7 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
 
   const containerProps = {
     className: "chart-element",
-    ref: chartRef,
-    //style: { width: "100%", height: "100%" }
+    ref: chartRef
   };
 
   const optionsArea: Highcharts.PlotAreasplineOptions = {
@@ -219,8 +215,8 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
     color: {
       linearGradient: {x1: 0, y1: 0, x2: 0, y2: 1}, 
       stops: [
-        [0, "#53ed7c"], // Start color
-        [1, "#2a7b9bb3"] // End color (transparent)
+        [0, "#53ed7c"], // start color
+        [1, "#2a7b9bb3"] // end color (transparent)
       ]
     }, 
     lineWidth: 0.5,
@@ -243,5 +239,4 @@ export default function SolarWind({ variable, range }: SolarWindProps) {
     </Chart>
   );
 }
-
 
