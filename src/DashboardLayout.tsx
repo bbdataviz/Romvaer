@@ -41,7 +41,7 @@ export default function DashboardLayout({children, range, page, setPage, expand,
           </a>
         </nav>
 
-        <p>Positioned far upstream of Earth at the Sun–Earth L1 Lagrange point, <strong>DSCOVR</strong> provides early measurements of the solar wind before geo- <br></br> magnetic disturbances interact with Earth’s magnetosphere.</p>
+        <p>Positioned far upstream of Earth at the Sun–Earth L1 Lagrange point, <strong>SOLAR-1</strong> provides early measurements of the solar wind before geo- <br></br> magnetic disturbances interact with Earth’s magnetosphere.</p>
         {/* Longer Version: <p>The Deep Space Climate Observatory (DSCOVR) continuously measures real-time solar wind conditions using its Faraday Cup plasma sensor.</p>
         <p>Positioned at the Sun–Earth L1 Lagrange point, approximately 1.5 million kilometers (1 million miles) from Earth, DSCOVR can detect changes in the solar wind 15 to 60 minutes before they reach Earth.</p>*/}
       </aside>
