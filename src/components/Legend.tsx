@@ -1,4 +1,4 @@
-export function Legend (){
+export default function Legend (){
 return(
     <>
       <div className="legend">
