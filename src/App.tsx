@@ -8,7 +8,7 @@ import Legend from './components/Legend.tsx';
 import { type DashboardPage } from './config/dashboardConfig.ts';
 import { type SolarWindVariable } from './config/solarWindConfig.ts';
 import { type TimeRange } from './config/timeRangeConfig.ts';
-import satellitePosition from './assets/DSCOVR-satellite-position.svg';
+import satellitePosition from './assets/satellite-position.svg';
 
 
 export default function App() {
