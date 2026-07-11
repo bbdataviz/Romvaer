@@ -3,7 +3,7 @@ import SolarWind from './components/SolarWind.tsx';
 import { type DashboardPage} from './config/dashboardConfig';
 import { type SolarWindVariable } from './config/solarWindConfig.ts';
 import { type TimeRange } from './config/timeRangeConfig.ts';
-import satellitePosition from './assets/DSCOVR-satellite-position.svg';
+import satellitePosition from './assets/satellite-position.svg';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
